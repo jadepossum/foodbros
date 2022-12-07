@@ -49,7 +49,38 @@ footer{
 }
 .foodcategory{
     width: 100%;
-    height: 400px;
+    height: initial;
     margin-bottom: 2rem;
     background-color: white;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card
+{
+    background-color: blueviolet;
+    width:17vw;
+    height:40vh;
+    margin:7px;
+    flex-shrink: 0;
+    position:relative;
+}
+.items
+{
+    display:flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom:0px;
+    width:100%;
+    background-color: yellow;
+    padding:1rem;
+    font-size: 15px;
+}
+.items > button
+{
+    background-color: Orange;
+    padding:2px;
+    border:0.1rem solid orange;
+    border-radius: 5px;
+    text-align: center;
 }
