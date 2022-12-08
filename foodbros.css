@@ -16,6 +16,11 @@ nav > ul{
     list-style: none;
     gap:2rem;
 }
+.sort{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+}
 .foodcontainer{
     display: flex;
     width: 100%;
@@ -29,7 +34,6 @@ nav > ul{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
     font-size: 20px;
     justify-content: center;
 }
@@ -52,4 +56,22 @@ footer{
     height: 400px;
     margin-bottom: 2rem;
     background-color: white;
+}
+.sublist > *{
+    display: block;
+    margin-inline:auto;
+}
+.sublist{
+    box-sizing: border-box;
+    transition-duration: 1s;
+    padding: 1rem 1rem;
+    height:initial;
+    background-color: green;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 1;
+    display: none;
+}
+.show{
+    display: block;
 }

@@ -10,16 +10,26 @@
 <body>
     <nav>
         <ul>
-            <li>search</li>
-            <li>offers</li>
-            <li>cart</li>
-            <li>login</li>
-            <li>sign up</li>
+            <li style="margin-left:auto;"><a href="">offers</a></li>
+            <li><a href="">cart</a></li>
+            <li><a href="">login</a></li>
         </ul>
     </nav>
+    <div class="sort">
+        <button>sort</button>
+    </div>
     <div class="foodcontainer">
         <div id="categories">
-            <a href="#indian">indian</a>
+            <a onclick="show()" href="#indian">indian</a>
+            <div class="sublist">
+                <a href="">indian1</a>
+                <a href="">indian2</a>
+                <a href="">indian3</a>
+                <a href="">indian4</a>
+                <a href="">indian5</a>
+                <a href="">indian6</a>
+                <a href="">indian7</a>
+            </div>
             <a href="#chineese">chineese</a>
             <a href="#french">french</a>
             <a href="#mexican">mexican</a>
@@ -43,6 +53,13 @@
             </div>
         </div>
     </div>
+    <script>
+        const sub=document.querySelector('.sublist');
+        function show(){
+            sub.classList.toggle("show");
+            console.log(sub);
+        }
+    </script>
     <footer>
         
     </footer>
