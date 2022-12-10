@@ -3,6 +3,9 @@
     margin:0px;
     box-sizing: border-box;
 }
+::-webkit-scrollbar{
+    display: none;
+}
 a{
     text-decoration: none;
     color: inherit;
@@ -32,6 +35,7 @@ nav > ul{
     justify-content: center;
 }
 .cart-box{
+    color:white;
     width: min(80%,1200px);
     display: grid;
     gap: 1em;
@@ -104,7 +108,7 @@ nav > ul{
 {
     background-color: blueviolet;
     width:300px;
-    height:40vh;
+    height:250px;
     flex-shrink: 0;
     border-radius: 20px;
     overflow: hidden;
