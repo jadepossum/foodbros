@@ -10,125 +10,233 @@
 <body>
     <nav>
         <ul>
-            <li style="margin-left:auto;"><a href="">offers</a></li>
-            <li><a href="">cart</a></li>
-            <li><a href="">login</a></li>
+            <li style="margin-left: auto;">
+                <div onclick="showcart()" class="cart">cart</div>
+            </li>
+            <li><a class="login" href="">login</a></li>
         </ul>
     </nav>
-    <div class="sort">
-        <button>sort</button>
+    <div class="cart-container">
+        <div class="cart-box">
+            <div class="order">order</div>
+        </div>
     </div>
     <div class="foodcontainer">
         <div id="categories">
-            <a onclick="show()" href="#indian">indian</a>
-            <div class="sublist">
-                <a href="">indian1</a>
-                <a href="">indian2</a>
-                <a href="">indian3</a>
-                <a href="">indian4</a>
-                <a href="">indian5</a>
-                <a href="">indian6</a>
-                <a href="">indian7</a>
+            <div class="indian">
+                <a href="#">indian</a>
+                <div class="sublist">
+                    <div>indian bread</div>
+                    <div>biryani</div>
+                    <div>rice</div>
+                    <div>curry</div>
+                    <div>starter</div>
+                </div>
             </div>
-            <a href="#chineese">chineese</a>
-            <a href="#french">french</a>
-            <a href="#mexican">mexican</a>
+            <div class="chineese">
+                <a href="#chineese">chineese</a>
+                <div class="sublist">
+                    <div>Chow Mein</div>
+                    <div>Fried Rice</div>
+                    <div>Noodles</div>
+                    <div>Manchuriya</div>
+                </div>
+            </div>
+            <div class="french">
+                <a href="#french">french</a>
+                <div class="sublist">
+                    <div>biryani</div>
+                    <div>rice</div>
+                    <div>curry</div>
+                    <div>starter</div>
+                </div>
+            </div>
+            <div class="mexican">
+                <a href="#mexican">mexican</a>
+                <div class="sublist">
+                    <div>biryani</div>
+                    <div>rice</div>
+                    <div>curry</div>
+                    <div>starter</div>
+                </div>
+            </div>
         </div>
         <div id="fooddisplay">
-            <div class="foodcategory" id="indian">
-                <div class="card">
+            <div class="foodcategory">
+                <div class="card biryani indian">
                     <div class="items">
+                        <p>Price :</p>
                         <p>Chicken Biryani</p>
-                        <button>Add to cart</button>
+                        <button class="cart-btn">Add to cart</button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card rice indian">
                     <div class="items">
+                        <p>Price :</p>
                         <p>Gongura Chicken pulao</p>
                         <button>Add to cart</button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card starter indian">
                     <div class="items">
+                        <p>Price :</p>
                         <p>Kurnool Fried Wings</p>
                         <button>Add to cart</button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card curry indian">
                     <div class="items">
+                        <p>Price :</p>
                         <p>Butter Chicken</p>
                         <button>Add to cart</button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card indian bread">
                     <div class="items">
+                        <p>Price :</p>
                     <p>Butter Naan</p>
                     <button>Add to cart</button>
                 </div>
                 </div>
-                <div class="card">
+                <div class="card indianbread indian">
                     <div class="items">
+                        <p>Price :</p>
                         <p>Thandoori Roti</p>
                         <button>Add to cart</button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card starter indian">
                     <div class="items">
+                        <p>Price :</p>
                         <p>Chicken 65</p>
                         <button>Add to cart</button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card curry indian">
                     <div class="items">
+                        <p>Price :</p>
                         <p>Paneer Butter Masalas</p>
                         <button>Add to cart</button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card curry indian">
                     <div class="items">
+                        <p>Price :</p>
                         <p>Paneer Tikka</p>
                         <button>Add to cart</button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card biryani indian">
                     <div class="items">
+                        <p>Price :</p>
                         <p>Paneer Biryani</p>
                         <button>Add to cart</button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card curry indian">
                     <div class="items">
+                        <p>Price :</p>
                         <p>Mushrrom Masala</p>
                         <button>Add to cart</button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card curry indian">
                     <div class="items">
+                        <p>Price :</p>
                         <p>Dal Tadka</p>
                         <button>Add to cart</button>
                     </div>
                 </div>
-            </div>
-            <div class="foodcategory" id="chineese">
-                <div class="card">chinese</div>
-            </div>
-            <div class="foodcategory" id="french">
-                <div class="card">french</div>
-            </div>
-            <div class="foodcategory" id="mexican">
-                <div class="card">mexican</div>
-            </div>
-            <div class="foodcategory">
-                <div class="card"></div>
+                <div class="card Chow Mein chineese">
+                    <div class="items">
+                        <p>Price :</p>
+                        <p>Chow Mein</p>
+                        <button>Add to cart</button>
+                    </div>
+                </div>
+                <div class="card Noodles chineese">
+                    <div class="items">
+                        <p>Price :</p>
+                        <p>Egg Noodles</p>
+                        <button>Add to cart</button>
+                    </div>
+                </div>
+                <div class="card Manchuriya chineese">
+                    <div class="items">
+                        <p>Price :</p>
+                        <p>Manchuriya</p>
+                        <button>Add to cart</button>
+                    </div>
+                </div>
+                <div class="card Fried Rice chineese">
+                    <div class="items">
+                        <p>Price :</p>
+                        <p>Chicken Fried Rice</p>
+                        <button>Add to cart</button>
+                    </div>
+                </div>
+                <div class="card Fried Rice chineese">
+                    <div class="items">
+                        <p>Price :</p>
+                        <p>Egg Fried Rice</p>
+                        <button>Add to cart</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <script>
-        const sub=document.querySelector('.sublist');
-        function show(){
-            sub.classList.toggle("show");
-            console.log(sub);
+        //declareations
+        const cartbox=document.querySelector('.cart-container');
+        const categories=document.querySelectorAll('#categories > div');
+        const sub=document.querySelectorAll('.sublist');
+        const cards=document.querySelectorAll('.card');
+        const indiansub=document.querySelectorAll('.sublist > *');
+        const cartbtn=document.querySelector('.cart-btn');
+        //functions
+        cartbtn.addEventListener('click',(ev)=>{
+            const newdiv=document.createElement('div');
+            const newcontent=document.createTextNode('this text is inserted dynamically');
+            newdiv.appendChild(newcontent);
+            document.querySelector('.order').appendChild(newdiv);
+            // document.querySelector('.order').innerHTML=ev.target.parentElement.outerHTML;
+            console.log(ev.target.parentElement.parentElement.outerHTML);
+        })
+        function showcart(){
+            cartbox.classList.toggle('unhide');
+            console.log(cartbox.classList.toString());
         }
+        categories.forEach(cat=>{
+            // console.log(cat.firstElementChild.innerHTML);            
+            cat.addEventListener('click',(ev)=>{
+                // console.log(ev.target);
+                sub.forEach(elem=>{
+                    if(!elem.parentElement.classList.toString().includes(ev.target.innerHTML)){
+                        elem.classList.remove('show');
+                    }
+                })
+                ev.target.nextElementSibling.classList.toggle('show');
+            })
+        })
+        indiansub.forEach(foodname=>{
+            // console.log(foodname);
+            foodname.addEventListener('click',(ev)=>{
+                ev.stopPropagation();
+                console.log(ev.target.innerHTML);
+                // console.log(ev.target.outerHTML);
+                cards.forEach(card=>{
+                    card.classList.remove("hide");
+                })
+                
+                cards.forEach(card=>{
+                // const list=card.classList;
+                    if(!card.classList.toString().includes(ev.target.innerHTML)&&ev.target.parentElement.parentElement.classList.toString()){
+                        console.log(ev.target.parentElement.parentElement.classList.toString());
+                        card.classList.add("hide");
+                    }
+                })
+            });
+        })
     </script>
     <footer>
         
