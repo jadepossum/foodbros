@@ -26,7 +26,7 @@ nav > ul{
 .cart-container{
     width: 100%;
     height: 90vh;
-    background-color: black;
+    background-image: linear-gradient(45deg,violet,rgb(240, 240, 88));
     visibility: hidden;
     position: absolute;
     z-index: 2;
@@ -35,17 +35,21 @@ nav > ul{
     justify-content: center;
 }
 .cart-box{
-    color:white;
     width: min(80%,1200px);
-    display: grid;
+    display: flex;
     gap: 1em;
     align-self: center;
-    grid-template-columns: auto;
+    justify-content: center;
 }
 .order{
-    height: initial;
-    grid-column: 0/1;
-    background-color: red;
+    height: 40px;
+    border-radius: 10px;
+    min-width: 600px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+    align-items: center;
+    justify-items: center;
     position: relative;
 }
 .foodcontainer{
@@ -104,37 +108,60 @@ nav > ul{
     display:flex;
     align-items: center;
 }
-.card
-{
+.card{
     background-color: blueviolet;
     width:300px;
     height:250px;
     flex-shrink: 0;
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
     position:relative;
 }
-
-.items
-{
+.items{
     display:flex;
     justify-content: space-between;
     position: absolute;
-    z-index: inherit;
     bottom:0px;
     width:100%;
-    background-color: yellow;
-    padding:1rem;
-    font-size: 15px;
+    height: 70px;
+    background-color: white;
+    padding-inline:.5rem;
     align-items: center;
 }
-.items > button
-{
-    background-color: Orange;
-    padding: 7px;
-    border:0.1rem solid orange;
-    border-radius: 5px;
+.btn-container{
+    position: relative;
+    right:0px;
+    width:100px;
+    border-radius: 10px;
+    height: 40px;
+    border: 2px solid black;
+    background-image: linear-gradient(45deg,rgb(108, 212, 188),rgb(236, 142, 87));
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* display: none; */
+}
+.removeitem,.additem{
+    width: 25px;
+    height: 100%;
+    border: 0px;
+    background-color: transparent;
+}
+.removeitem,.additem,.qty{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.cart-btn{
+    width: 100px;
+    height: 40px;
+    border: 2px solid black;
+    background-image: linear-gradient(45deg,rgb(108, 212, 188),rgb(236, 142, 87));
+    border-radius: 10px;
     text-align: center;
+    font-weight: 600;
+    position:absolute;
+    right: .5rem;
 }
 .hide{
     display:none;
