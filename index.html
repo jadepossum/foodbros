@@ -18,7 +18,12 @@
     </nav>
     <div class="cart-container">
         <div class="cart-box">
-            
+            <button class="payment-btn">proceed payment</button>
+            <div class="ordertemplate">
+                <div>Fooditem</div>
+                <div>Quantitiy</div>
+                <div>Total price = <span class="totalprice">0</span></div>
+            </div>
         </div>
     </div>
     <div class="foodcontainer">
@@ -78,7 +83,7 @@
                 <div class="card rice indian">
                     <div class="items">
                         <p>Gongura Chicken pulao</p>
-                        <p>Price :</p>
+                        <p>150</p>
                         <div class="btn-container">
                             <button class="removeitem">-</button>
                             <div class="qty">1</div>
@@ -90,7 +95,7 @@
                 <div class="card starter indian">
                     <div class="items">
                         <p>Kurnool Fried Wings</p>
-                        <p>Price :</p>
+                        <p>120</p>
                         <div class="btn-container">
                             <button class="removeitem">-</button>
                             <div class="qty">1</div>
@@ -102,7 +107,7 @@
                 <div class="card curry indian">
                     <div class="items">
                         <p>Butter Chicken</p>
-                        <p>Price :</p>
+                        <p>150</p>
                         <div class="btn-container">
                             <button class="removeitem">-</button>
                             <div class="qty">1</div>
@@ -114,7 +119,7 @@
                 <div class="card indian bread">
                     <div class="items"> 
                     <p>Butter Naan</p>
-                    <p>Price :</p>
+                    <p>30</p>
                     <div class="btn-container">
                             <button class="removeitem">-</button>
                             <div class="qty">1</div>
@@ -126,7 +131,7 @@
                 <div class="card indianbread indian">
                     <div class="items">
                         <p>Thandoori Roti</p>
-                        <p>Price :</p>
+                        <p>30</p>
                         <div class="btn-container">
                             <button class="removeitem">-</button>
                             <div class="qty">1</div>
@@ -280,11 +285,13 @@
         const cartbtns=document.querySelectorAll('.cart-btn');
         const additembtns=document.querySelectorAll('.additem');
         const removeitembtns=document.querySelectorAll('.removeitem');
-        let cartitems=document.querySelectorAll('.cart-box > *');
+        let cartitems=document.querySelectorAll('.order');
+        const Totalprice=document.querySelector('.totalprice');
         //functions
+        
         removeitembtns.forEach(btn=>{
             btn.addEventListener('click',(ev)=>{
-                cartitems=document.querySelectorAll('.cart-box > *');
+                cartitems=document.querySelectorAll('.order');
                 let x=parseInt(ev.target.parentElement.children[1].innerHTML);
                 if(x>1){
                     ev.target.parentElement.children[1].innerHTML=--x;
@@ -298,7 +305,7 @@
         })
         additembtns.forEach(btn=>{
             btn.addEventListener('click',(ev)=>{
-                cartitems=document.querySelectorAll('.cart-box > *');
+                cartitems=document.querySelectorAll('.order');
                 let x=parseInt(ev.target.parentElement.children[1].innerHTML);
                 ev.target.parentElement.children[1].innerHTML=++x;
                 if(x>1){
@@ -326,6 +333,11 @@
                 document.querySelector('.cart-box').appendChild(neworder);
                 ev.target.style.visibility='hidden';
                 console.log(ev.target);
+                let y=parseInt(Totalprice.innerHTML);
+                y+=parseInt(ev.target.parentElement.children[1].innerHTML);
+                Totalprice.innerHTML=y;
+                document.querySelector('.ordertemplate').style.display='grid';
+                document.querySelector('.payment-btn').style.display='inline';
             })
         })
         function showcart(){
@@ -338,7 +350,7 @@
                     let x=parseInt(item.children[2].innerHTML);
                     item.children[2].innerHTML=x*noofitems/(noofitems-1);
                     item.children[1].innerHTML=noofitems;
-                   console.log(item.children[2].innerHTML);
+                   computetotalprice();
                 }
             })
         }
@@ -348,14 +360,28 @@
                     let x=parseInt(item.children[2].innerHTML);
                     item.children[2].innerHTML=x*noofitems/(noofitems+1);
                     item.children[1].innerHTML=noofitems;
-                   console.log(item.children[2].innerHTML);
+                   computetotalprice();
                 }
             })
+        }
+        function computetotalprice(){
+            let y=0;
+            cartitems.forEach(item=>{
+                y+=parseInt(item.lastElementChild.innerHTML);
+            })
+            Totalprice.innerHTML=y;
         }
         function removecartitem(ordername){
             cartitems.forEach(item=>{
                 if(ordername==item.firstElementChild.innerHTML){
                     item.remove();
+                    let y=parseInt(Totalprice.innerHTML);
+                    y-=parseInt(item.lastChild.innerHTML);
+                    Totalprice.innerHTML=y;
+                    if(document.querySelector('.cart-box').children.length==2){
+                        document.querySelector('.ordertemplate').style.display='none';
+                        document.querySelector('.payment-btn').style.display='none';
+                    }
                 }
             })
         }
