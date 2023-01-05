@@ -1,3 +1,10 @@
+<?php
+session_start();
+    // if(!isset($_SESSION['username'])){
+    //     header("location: login.php");
+    // }
+    require_once "config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +20,7 @@
             <li style="margin-left: auto;">
                 <div onclick="showcart()" class="cart">cart</div>
             </li>
-            <li><a class="login" href="">login</a></li>
+            <li><a class="login" href="logout.php">logout</a></li>
         </ul>
     </nav>
     <div class="cart-container">
@@ -69,6 +76,7 @@
         <div id="fooddisplay">
             <div class="foodcategory">
                 <div class="card biryani indian">
+                    <img src="./foodpics/biryani.jpg"  alt="">
                     <div class="items">
                         <p>Chicken Biryani</p>
                         <p>190</p>
@@ -81,6 +89,7 @@
                     </div>
                 </div>
                 <div class="card rice indian">
+                    <img src="./foodpics/gongurachicken.jpg" alt="">
                     <div class="items">
                         <p>Gongura Chicken pulao</p>
                         <p>150</p>
@@ -93,6 +102,7 @@
                     </div>
                 </div>
                 <div class="card starter indian">
+                <img src="./foodpics/friedwings.jpg" alt="">
                     <div class="items">
                         <p>Kurnool Fried Wings</p>
                         <p>120</p>
@@ -105,6 +115,7 @@
                     </div>
                 </div>
                 <div class="card curry indian">
+                <img src="./foodpics/butterchicken.jpg" alt="">
                     <div class="items">
                         <p>Butter Chicken</p>
                         <p>150</p>
@@ -117,6 +128,7 @@
                     </div>
                 </div>
                 <div class="card indian bread">
+                <img src="./foodpics/butternaan.jpg" alt="">
                     <div class="items"> 
                     <p>Butter Naan</p>
                     <p>30</p>
@@ -129,6 +141,7 @@
                 </div>
                 </div>
                 <div class="card indianbread indian">
+                <img src="./foodpics/thandooriRoti.jpg" alt="">
                     <div class="items">
                         <p>Thandoori Roti</p>
                         <p>30</p>
@@ -141,6 +154,7 @@
                     </div>
                 </div>
                 <div class="card starter indian">
+                <img src="./foodpics/chicken65.jpg" alt="">
                     <div class="items">
                         <p>Chicken 65</p>
                         <p>Price :</p>
@@ -153,6 +167,7 @@
                     </div>
                 </div>
                 <div class="card curry indian">
+                <img src="./foodpics/paneerbuttermasala.jpg" alt="">
                     <div class="items">
                         <p>Paneer Butter Masalas</p>
                         <p>Price :</p>
@@ -165,6 +180,7 @@
                     </div>
                 </div>
                 <div class="card curry indian">
+                <img src="./foodpics/paneertikka.jpg" alt="">
                     <div class="items">
                         <p>Paneer Tikka</p>
                         <p>Price :</p>
@@ -176,19 +192,8 @@
                         <button class="cart-btn">Add to cart</button>
                     </div>
                 </div>
-                <div class="card biryani indian">
-                    <div class="items">
-                        <p>Paneer Biryani</p>
-                        <p>Price :</p>
-                        <div class="btwn-container">
-                            <button class="removeitem">-</button>
-                            <div class="qty">1</div>
-                            <button class="additem">+</button>
-                        </div>
-                        <button class="cart-btn">Add to cart</button>
-                    </div>
-                </div>
                 <div class="card curry indian">
+                <img src="./foodpics/mushroommasala.jpg" alt="">
                     <div class="items">
                         <p>Mushrrom Masala</p>
                         <p>Price :</p>
@@ -201,6 +206,7 @@
                     </div>
                 </div>
                 <div class="card curry indian">
+                <img src="./foodpics/dalTadka.jpg" alt="">
                     <div class="items">
                         <p>Dal Tadka</p>
                         <p>Price :</p>
@@ -213,6 +219,7 @@
                     </div>
                 </div>
                 <div class="card Chow Mein chineese">
+                <img src="./foodpics/chowMein.jpg" alt="">
                     <div class="items">
                         <p>Chow Mein</p>
                         <p>Price :</p>
@@ -225,6 +232,7 @@
                     </div>
                 </div>
                 <div class="card Noodles chineese">
+                <img src="./foodpics/eggnoodles.jpg" alt="">
                     <div class="items">
                         <p>Egg Noodles</p>
                         <p>Price :</p>
@@ -237,6 +245,7 @@
                     </div>
                 </div>
                 <div class="card Manchuriya chineese">
+                <img src="./foodpics/manchurian.jpg" alt="">
                     <div class="items">
                         <p>Manchuriya</p>
                         <p>Price :</p>
@@ -249,6 +258,7 @@
                     </div>
                 </div>
                 <div class="card Fried Rice chineese">
+                <img src="./foodpics/chickenfriedrice.jpg" alt="">
                     <div class="items">
                         <p>Chicken Fried Rice</p>
                         <p>Price :</p>
@@ -261,6 +271,7 @@
                     </div>
                 </div>
                 <div class="card Fried Rice chineese">
+                <img src="./foodpics/eggrice.jpg" alt="">
                     <div class="items">
                         <p>Egg Fried Rice</p>
                         <p>Price :</p>
